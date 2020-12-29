@@ -1,0 +1,15 @@
+Elise Merritt (netid: em575)
+Haskell 2
+
+1.
+data Color =  Red | Green | Blue | Black deriving Eq
+data Width =  Thin | Medium | Thick deriving Eq
+data LineStyle =  Solid | Dashed | Dotted | Wavy deriving Eq
+data BorderStyle = Invisible | BorderStyle Color Width LineStyle deriving Eq
+thin_red = BorderStyle Red Thin Solid 
+isGreenAndWavy (BorderStyle x y z) = if (x==Green && z==Wavy) then True else False
+isGreenAndWavy Invisible = False
+
+2.
+dist (Point x1 y1 z1) (Point x2 y2 z2) = sqrt( (x2-x1)^2 + (y2-y1)^2 + (z2-z1)^2 )
+projXY (Point x1 y1 z1) = (Point x1 y1 0)
